@@ -1,0 +1,143 @@
+ cd Desktop
+capreyon@Sudhanshu-HP-Notebook:~/Desktop$ g++ 001.cpp
+capreyon@Sudhanshu-HP-Notebook:~/Desktop$ gdb ./a.out
+GNU gdb (Ubuntu 7.11.1-0ubuntu1~16.5) 7.11.1
+Copyright (C) 2016 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from ./a.out...(no debugging symbols found)...done.
+(gdb) b main
+Breakpoint 1 at 0x40077a
+(gdb) list
+No symbol table is loaded.  Use the "file" command.
+(gdb) Quit
+(gdb) 
+[1]+  Stopped                 gdb ./a.out
+capreyon@Sudhanshu-HP-Notebook:~/Desktop$ g++ -g 001.cpp 
+capreyon@Sudhanshu-HP-Notebook:~/Desktop$ gdb -q ./a.out
+Reading symbols from ./a.out...done.
+(gdb) list
+1	#include<bits/stdc++.h>
+2	using namespace std;
+3	int main()
+4	{
+5		for(int i=0;i<10;++i)
+6		{
+7			if(i%2==0)
+8				cout<<"Even\n";
+9			else
+10				cout<<"odd\n";
+(gdb) b 4
+Breakpoint 1 at 0x40077e: file 001.cpp, line 4.
+(gdb) run
+Starting program: /home/capreyon/Desktop/a.out 
+
+Breakpoint 1, main () at 001.cpp:5
+5		for(int i=0;i<10;++i)
+(gdb) next
+7			if(i%2==0)
+(gdb) n
+8				cout<<"Even\n";
+(gdb) n
+Even
+5		for(int i=0;i<10;++i)
+(gdb) continue
+Continuing.
+odd
+Even
+odd
+Even
+odd
+Even
+odd
+Even
+odd
+[Inferior 1 (process 3662) exited normally]
+(gdb) run
+Starting program: /home/capreyon/Desktop/a.out 
+
+Breakpoint 1, main () at 001.cpp:5
+5		for(int i=0;i<10;++i)
+(gdb) print i
+$1 = 0
+(gdb) n
+7			if(i%2==0)
+(gdb) print i
+$2 = 0
+(gdb) n
+8				cout<<"Even\n";
+(gdb) 
+Even
+5		for(int i=0;i<10;++i)
+(gdb) p i
+$3 = 0
+(gdb) n
+7			if(i%2==0)
+(gdb) p i
+$4 = 1
+(gdb) p i % 2==0
+$5 = false
+(gdb) display
+(gdb) dis i
+warning: bad breakpoint number at or near 'i'
+(gdb) disp i
+1: i = 1
+(gdb) n
+10				cout<<"odd\n";
+1: i = 1
+(gdb) n
+odd
+5		for(int i=0;i<10;++i)
+1: i = 1
+(gdb) n
+7			if(i%2==0)
+1: i = 2
+(gdb) n
+8				cout<<"Even\n";
+1: i = 2
+(gdb) n
+Even
+5		for(int i=0;i<10;++i)
+1: i = 2
+(gdb) n
+7			if(i%2==0)
+1: i = 3
+(gdb) n
+10				cout<<"odd\n";
+1: i = 3
+(gdb) n
+odd
+5		for(int i=0;i<10;++i)
+1: i = 3
+(gdb) disp i%2
+2: i%2 = 1
+(gdb) n
+7			if(i%2==0)
+1: i = 4
+2: i%2 = 0
+(gdb) 
+8				cout<<"Even\n";
+1: i = 4
+2: i%2 = 0
+(gdb) 
+Even
+5		for(int i=0;i<10;++i)
+1: i = 4
+2: i%2 = 0
+(gdb) n
+7			if(i%2==0)
+1: i = 5
+2: i%2 = 1
+(gdb) Quit
+(gdb) 
+

@@ -1,0 +1,38 @@
+                        (mysql reference manual) from here learn mysql
+alter table tablename
+add(<filenme> <type>(size));
+alter table tablename change
+first_bname name
+char(size);
+
+truncate table tablename    //empties the table completely(removes the record permanently)
+
+select * from tablename limit noofrows;
+
+select * from tablename limit 2,2;
+
+select *from tablename where name LIKE 'ra%';
+ 
+update tablebname set city='mexico' where id=1;
+
+alter table tablename change prev_name new_name datatypr(size); //changes the field name 
+
+alter table tablename modify column fieldname newdatatpe(size);
+// changes the datatype of field 
+
+alter table tablename rename newtablename ;  // changes the tablename
+
+alter table tablename drop column fieldname ;  // drops the field
+
+select * from tablename order by rand() limit no_of_rows; // shows data randomly
+
+select min(salary) , max(salary) , avg(salary) from tablename;
+
+select count(fieldname1) from tablename  group by fieldname2  // shows the count  of fieldname1 according to fieldname2
+
+
+select count (id) from users where id in(1,2,3)group by fieldname;
+
+select * from tablename order by fieldname      //ascending order
+
+select * from tablename order by fieldname desc     //descending order

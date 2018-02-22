@@ -1,0 +1,1 @@
+#include<stdio.h>int main(){cout<<"mankant";while(1){cout<<"sudhanshu saurav";}}

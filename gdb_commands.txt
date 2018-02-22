@@ -1,0 +1,27 @@
+g++ -g hello.cpp
+gdb ./a.out
+start(for break main and run also)=b main->run
+ctrl x->a
+disp i
+disp i%2
+alias gdbq="gdb-q"(for making short command)
+win->\r\n
+mac->\r
+lin->\n
+ctrl p(for previous command here)
+ctrl n(for next command here)
+as(assembly code)->take input
+ctrl x->2
+watch var_name(break the code at that point with execute it)
+info breakpoints
+delete k(delete breakpoints at like k)
+nexti
+
+
+
+
+
+
+
+
+
